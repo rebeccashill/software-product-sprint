@@ -1,21 +1,171 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Rebecca Shillingford's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebecca Shillingford</title>
     <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Hi! My name is Rebecca, and I'm a sophomore at UNC Chapel Hill. I'm pursuing a B.S. in Computer Science, and a B.A. in Music.</p>
-      <img src="/images/original.jpg" />
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+    <main>
+      <!-- ***********************  ABOUT / PROFILE  *********************** -->
+      <header>
+        <div class="content-wrap">
+          <h1>Rebecca Shillingford</h1>
+          <h2>Student at University of North Carolina, Chapel Hill</h2>
+
+          <p>Introducing...the very beginnings of my website portfolio.</p>
+          <p>I'm committed to personalizing this site, and I'm excited to see how I can work to improve it. </p>
+          <p>Right now I'm a participant in <a href="https://buildyourfuture.withgoogle.com/programs/softwareproductsprint/" target="_blank">Google Software Product Sprint</a>, an invite-only program focusing on building web applications with Java.</p>
+          <p>I'm constantly learning, right now I'm getting started with data analysis, and I'm using my favorite language, Python (though I won't knock on Java, all languages are ~sort of~ equal). I think AI is so cool and I hope to learn more soon.</p>
+        <p>Click here to get a random fact about me:</p>
+        <button onclick="addRandomGreeting()">Hello</button>
+        <div id="greeting-container"></div>
+        </div>
+      </header>
+
+      <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
+      <section class="projects">
+        <div class="content-wrap divider">
+          <h2>Work Experience</h2>
+          <p>View selected projects below. More information can be found at my <a href="https://github.com/rebeccashill">GitHub</a>.</p>
+
+          <!-- Project 1 -->
+          <section class="project-item">
+            <img src="images/Tommy_Boy_Logo.jpg" alt="tommy boy logo">
+            <h3>Tommy Boy Music</h3>
+            <p>Developed content and instruction for various CSS and front-end focused web development courses including CSS Essential Training, Getting Your Website Online, Design Systems & Architectures and more.</p>
+            <a class="btn" href="https://www.tommyboy.com/" target="_blank">Tommy Boy Music</a>
+            <a class="btn" href="https://www.youtube.com/channel/UCnSR7_Oq-MdsZxfogsfk-Ug">Tommy Boy's Youtube Channel</a>
+          </section>
+
+          <!-- Project 2 -->
+          <section class="project-item">
+            <img src="images/GWC_Logo.jpg" alt="gwc thumbnail">
+            <h3>Girls Who Code Teaching Assistant</h3>
+            <p>Girls Who Code was launched in 2012 to equip young women with the tools to succeed in computer science. I became involved with them when I was invited to participant in their summer immersion program in 2018! A few years later, I became a volunteer teacher's assistant for them at UNC.</p>
+            <a class="btn" href="https://girlswhocode.web.unc.edu/" target="_blank">Girls Who Code at UNC-CH</a>
+          </section>
+
+          <!-- Project 3 -->
+          <section class="project-item">
+            <img src="images/CSSI_Group_Photo.jpg" alt="me n my friends">
+            <h3>Google CSSI Participant</h3>
+            <p>After..., I felt inspired... I realized that I love pasta. I searched for <a href="https://depositphotos.com/stock-photos/pasta-dish.html" target="_blank">pasta pictures</a> and it was available! Eat some pasta today.</p>
+            <a class="btn" href="https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute/" target="_blank">Google CSSI</a>
+          </section>
+        </div>
+      </section>
+
+      <!-- ***********************  WORK EXPERIENCE  *********************** -->
+      <section class="work-experience item-details">
+        <div class="content-wrap divider">
+          <h2>Work Experience</h2>
+          <p>See my complete work history on <a href="linkedin.com/in/rebeccashillingford">LinkedIn</a>.</p>
+
+          <!-- Job 1 -->
+          <section class="job-item">
+            <div class="job-details">
+              <h3>Playlist 1</h3>
+              <p>Freelance</p>
+              <p>January 2012-Present</p>
+              <iframe src="https://open.spotify.com/embed/playlist/2Ry7mOTPxAtFYw9yWsrCip" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div class="job-summary">
+              <p>Provides various front-end related services ranging from development work, speaking engagements, instructor training, workshops, and curriculum development. See more at  <a href="google.com">google.com</a>.</p>
+            </div>
+          </section>
+
+          <!-- Job 2 -->
+          <section class="job-item">
+            <div class="job-details">
+              <h3>Playlist 2</h3>
+              <p>Only Good Vibes</p>
+              <p>July 2014 - February 2021</p>
+              <iframe src="https://open.spotify.com/embed/playlist/45LKVo3wG45TyIdyJSffWo" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div class="job-summary">
+              <p>Managed all my playlists for years. That counts as a job, right?</p>
+              <p>Key contributions:</p>
+              <ul>
+                <li>Overhauled the curriculum and standardized the content and delivery.
+                  <ul>
+                    <li>HTML, CSS, JavaScript, jQuery, Wordpress and Responsive Web Design.</li>
+                    <li>More random writing that will be replaced.</li>
+                    <li>Ayyyyy</li>
+                    <li>~Skillz~</li>
+                  </ul>
+                </li>
+                <li>Yeeted.</li>
+                <li>Maintained a website.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Job 3 -->
+          <section class="job-item">
+            <div class="job-details">
+              <h3>Lead Front-End Developer</h3>
+              <p>My house</p>
+              <p>March 2013 - February 2014</p>
+              <iframe src="https://open.spotify.com/embed/playlist/7JxjZTofIGHkYNusQd4RtS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div class="job-details">
+              <p>Lead the front-end development for coding.</p>
+              <p>Key contributions:</p>
+              <ul>
+                <li>Responsible for..</li>
+                <li>Created...</li>
+                <li>Standardized...</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
+      <section class="education item-details">
+        <div class="content-wrap">
+          <h2>Education</h2>
+
+          <section>
+            <h3>University of North Carolina, Chapel Hill</h3>
+            <p>Bachelor of Science and Arts, 2019-Present</p>
+            <p>Double Major in Computer Science & Music</p>
+          </section>
+
+          <section>
+            <h3>SAR High School - Bronx, NY</h3>
+            <p>Placeholder</p>
+            <p>Learned...</p>
+          </section>
+
+          <section>
+            <h3>Placeholder</h3>
+            <p>General Studies, 2000</p>
+          </section>
+        </div>
+      </section>
+
+
+
+
+      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
+      <footer>
+        <div class="content-wrap">
+          <h2>Let's Keep in Touch!</h2>
+
+          <!-- Social media and contact links. Add or remove any networks. -->
+          <ul class="contact-list">
+            <li><a href="mailto:email@example.com">shillingfordrebecca@gmail.com</a></li>
+            <li><a href="instagram.com/rebeccno" target="_blank">Instagram</a></li>
+            <li><a href="https://www.pinterest.com/carelessbub/" target="_blank">Pinterest</a></li>
+            <li><a href="linkedin.com/in/rebeccashillingford" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>
