@@ -17,7 +17,7 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['Im from NYC', 'I love chipotle', 'Im a cat person', 'I love 2048'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -25,4 +25,13 @@ function addRandomGreeting() {
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
+}
+
+/** Fetches the current date from the server and adds it to the page. */
+async function showSongLyrics() {
+  const responseFromServer = await fetch('/lyrics');
+  const textFromResponse = await responseFromServer.text();
+
+  const lyricsContainer = document.getElementById('lyrics-container');
+  lyricsContainer.innerText = textFromResponse;
 }
