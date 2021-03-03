@@ -16,22 +16,25 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['Im from NYC', 'I love chipotle', 'Im a cat person', 'I love 2048'];
+    const greetings =
+        ['Im from NYC', 'I love chipotle', 'Im a cat person', 'I love 2048'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+    // Pick a random greeting.
+    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    // Add it to the page.
+    const greetingContainer = document.getElementById('greeting-container');
+    greetingContainer.innerText = greeting;
 }
 
-/** Fetches the current date from the server and adds it to the page. */
+/** Fetches the song lyrics from LyricsServlet and updates the page. */
 async function showSongLyrics() {
-  const responseFromServer = await fetch('/lyrics');
-  const textFromResponse = await responseFromServer.text();
+    // Send a request to /lyrics.
+    const responseFromServer = await fetch('/lyrics');
 
-  const lyricsContainer = document.getElementById('lyrics-container');
-  lyricsContainer.innerText = textFromResponse;
+    //Parse the response as JSON.
+    const lyricsArray = await responseFromServer.json();
+    const oneLyric = lyricsArray[Math.floor(Math.random() * 3)];
+    const lyricsContainer = document.getElementById('lyrics-container');
+    lyricsContainer.innerText = oneLyric;
 }
