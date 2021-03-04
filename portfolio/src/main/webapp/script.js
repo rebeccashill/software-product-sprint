@@ -34,7 +34,7 @@ async function showSongLyrics() {
 
     //Parse the response as JSON.
     const lyricsArray = await responseFromServer.json();
-    const oneLyric = lyricsArray[Math.floor(Math.random() * 3)];
+    const oneLyric = lyricsArray[Math.floor(Math.random() * lyricsArray.length)];
     const lyricsContainer = document.getElementById('lyrics-container');
     lyricsContainer.innerText = oneLyric;
 }

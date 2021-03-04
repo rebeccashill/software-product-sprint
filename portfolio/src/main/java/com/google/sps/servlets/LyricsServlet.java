@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-/** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
+//Handles requests sent to the /lyrics URL.
 @WebServlet("/lyrics")
+/* Returns song lyrics */
 public class LyricsServlet extends HttpServlet {
 
 
@@ -32,14 +33,10 @@ public class LyricsServlet extends HttpServlet {
         response.getWriter().println(json);
     }
     private ArrayList<String> initializeArray(){
-        ArrayList<String> songLyrics = new ArrayList<String>(3);
-        int i = 0;
-        songLyrics.add(i, "Unsealed, on a porch a letter sat / Then you said, I wanna leave it again / Once I saw her on a beach of weathered sand / And on the sand I wanna leave her again");
-        i++;
-        songLyrics.add(i, "I'm gonna live my life / I can't ever run and hide / I won't compromise / Cause I'll never know / I'm gonna close my eyes / I can't watch the time go by / I won't keep it inside");
-        i++;
-        songLyrics.add(i, "That's the way everyday goes / Every time we've no control / If the sky is pink and white / If the ground is black and yellow / It's the same way you showed me");
-        i++;
+        ArrayList<String> songLyrics = new ArrayList<String>();
+        songLyrics.add(0, "Unsealed, on a porch a letter sat / Then you said, I wanna leave it again / Once I saw her on a beach of weathered sand / And on the sand I wanna leave her again");
+        songLyrics.add(1, "I'm gonna live my life / I can't ever run and hide / I won't compromise / Cause I'll never know / I'm gonna close my eyes / I can't watch the time go by / I won't keep it inside");
+        songLyrics.add(2, "That's the way everyday goes / Every time we've no control / If the sky is pink and white / If the ground is black and yellow / It's the same way you showed me");
         return songLyrics;
     }
     private String convertToJsonUsingGson(ArrayList<String> songLyrics) {
