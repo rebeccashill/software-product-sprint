@@ -9,11 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
+    /**Servlet that handles questions */
     @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 

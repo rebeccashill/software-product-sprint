@@ -34,9 +34,9 @@ public class LyricsServlet extends HttpServlet {
     }
     private ArrayList<String> initializeArray(){
         ArrayList<String> songLyrics = new ArrayList<String>();
-        songLyrics.add(0, "Unsealed, on a porch a letter sat / Then you said, I wanna leave it again / Once I saw her on a beach of weathered sand / And on the sand I wanna leave her again");
-        songLyrics.add(1, "I'm gonna live my life / I can't ever run and hide / I won't compromise / Cause I'll never know / I'm gonna close my eyes / I can't watch the time go by / I won't keep it inside");
-        songLyrics.add(2, "That's the way everyday goes / Every time we've no control / If the sky is pink and white / If the ground is black and yellow / It's the same way you showed me");
+        songLyrics.add("Unsealed, on a porch a letter sat / Then you said, I wanna leave it again / Once I saw her on a beach of weathered sand / And on the sand I wanna leave her again");
+        songLyrics.add("I'm gonna live my life / I can't ever run and hide / I won't compromise / Cause I'll never know / I'm gonna close my eyes / I can't watch the time go by / I won't keep it inside");
+        songLyrics.add("That's the way everyday goes / Every time we've no control / If the sky is pink and white / If the ground is black and yellow / It's the same way you showed me");
         return songLyrics;
     }
     private String convertToJsonUsingGson(ArrayList<String> songLyrics) {
