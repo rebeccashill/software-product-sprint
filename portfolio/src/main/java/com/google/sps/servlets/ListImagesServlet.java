@@ -27,12 +27,12 @@ public class ListImagesServlet extends HttpServlet {
     String bucketName = "https://rshillingford-sps-spring21.uc.r.appspot.com/";
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
-    Page<Blob> blobs = bucket.list();
+    Page<Blob> uploads = bucket.list();
 
     // Output <img> elements as HTML.
     response.setContentType("text/html;");
-    for (Blob blob : blobs.iterateAll()) {
-      String imgTag = String.format("<img src=\"%s\" />", blob.getMediaLink());
+    for (Blob upload : uploads.iterateAll()) {
+      String imgTag = String.format("<img src=\"%s\" />", upload.getMediaLink());
       response.getWriter().println(imgTag);
       response.getWriter().println("<br>");
     }

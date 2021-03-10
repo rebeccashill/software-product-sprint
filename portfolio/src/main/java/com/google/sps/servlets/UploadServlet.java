@@ -70,11 +70,11 @@ public class UploadServlet extends HttpServlet {
         String bucketName = "https://rshillingford-sps-spring21.uc.r.appspot.com/";
         Storage storage =
         StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-        BlobId blobId = BlobId.of(bucketName, fileName);
-        BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+        BlobId uploadId = BlobId.of(bucketName, fileName);
+        BlobInfo uploadInfo = BlobInfo.newBuilder(uploadId).build();
 
         // Upload the file to Cloud Storage.
-        Blob blob = storage.create(blobInfo, fileInputStream);
+        Blob blob = storage.create(uploadInfo, fileInputStream);
 
         // Return the uploaded file's URL.
         return blob.getMediaLink();
