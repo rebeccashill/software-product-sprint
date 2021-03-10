@@ -38,7 +38,6 @@ async function showSongLyrics() {
     const lyricsContainer = document.getElementById('lyrics-container');
     lyricsContainer.innerText = oneLyric;
 }
-
 /** Script for tooltips */
 (function($){
     $(document).ready(function(){
