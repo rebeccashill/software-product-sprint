@@ -68,8 +68,7 @@ public class UploadServlet extends HttpServlet {
     private static String uploadToCloudStorage(String fileName, InputStream fileInputStream) {
         String projectId = "rshillingford-sps-spring21";
         String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
-        Storage storage =
-        StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
         BlobId uploadId = BlobId.of(bucketName, fileName);
         BlobInfo uploadInfo = BlobInfo.newBuilder(uploadId).build();
 
