@@ -24,7 +24,7 @@ public class ListImagesServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // List all of the uploaded files.
     String projectId = "rshillingford-sps-spring21";
-    String bucketName = "https://rshillingford-sps-spring21.uc.r.appspot.com/";
+    String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
     Page<Blob> uploads = bucket.list();
