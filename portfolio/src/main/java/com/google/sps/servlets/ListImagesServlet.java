@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ListImagesServlet extends HttpServlet {
 
     /**
-     *
+     * Gets files saved in cloud storage and lists them on an HTML page.
      */
     private static final long serialVersionUID = 1L;
 
