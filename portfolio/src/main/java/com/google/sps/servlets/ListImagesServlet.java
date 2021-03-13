@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/list-images")
 public class ListImagesServlet extends HttpServlet {
 
-    //Default serial number
+    //Default serial number.
     private static final long serialVersionUID = 1L;
 
-    ////Retrieve projectId and bucketName
+    ////Retrieve projectId and bucketName.
     private static final String projectId = "rshillingford-sps-spring21";
     private static final String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
 

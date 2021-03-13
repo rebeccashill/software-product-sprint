@@ -29,7 +29,9 @@ public class LyricsServlet extends HttpServlet {
         response.setContentType("application/json;");
         response.getWriter().println(json);
     }
-    //Returns song lyrics
+    /*
+    *   Returns song lyrics.
+    */
     private ArrayList<String> initializeArray(){
         ArrayList<String> songLyrics = new ArrayList<String>();
         songLyrics.add("Unsealed, on a porch a letter sat / Then you said, I wanna leave it again / Once I saw her on a beach of weathered sand / And on the sand I wanna leave her again");
@@ -37,6 +39,9 @@ public class LyricsServlet extends HttpServlet {
         songLyrics.add("That's the way everyday goes / Every time we've no control / If the sky is pink and white / If the ground is black and yellow / It's the same way you showed me");
         return songLyrics;
     }
+    /*
+    *   Converts songLyrics array to JSON data.
+    */
     private String convertToJsonUsingGson(ArrayList<String> songLyrics) {
         Gson gson = new Gson();
         return gson.toJson(songLyrics);

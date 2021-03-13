@@ -59,11 +59,10 @@ public class UploadServlet extends HttpServlet {
             String fileName = filePart.getSubmittedFileName();
             InputStream fileInputStream = filePart.getInputStream();
 
-            // Upload the file and get its URL
+            // Upload the file and get its URL.
             String uploadedFileUrl = uploadToCloudStorage(fileName, fileInputStream);
 
             // Output some HTML that shows the data the user entered.
-            // You could also store the uploadedFileUrl in Datastore instead.
             PrintWriter out = response.getWriter();
             out.println("<p>Here's the image you uploaded:</p>");
             out.println("<a href=\"" + uploadedFileUrl + "\">");
