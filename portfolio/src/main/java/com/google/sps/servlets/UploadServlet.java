@@ -38,7 +38,16 @@ import javax.servlet.http.Part;
 @MultipartConfig
 public class UploadServlet extends HttpServlet {
 
+    //Default serial number
+    private static final long serialVersionUID = 1L;
+
+    //Retrieve projectId and bucketName
+    private static final String projectId = "rshillingford-sps-spring21";
+    private static final String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
+
   @Override
+    /* Upload posts to cloud storage.
+    */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
@@ -66,8 +75,6 @@ public class UploadServlet extends HttpServlet {
 
     /** Uploads a file to Cloud Storage and returns the uploaded file's URL. */
     private static String uploadToCloudStorage(String fileName, InputStream fileInputStream) {
-        String projectId = "rshillingford-sps-spring21";
-        String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
         Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
         BlobId uploadId = BlobId.of(bucketName, fileName);
         BlobInfo uploadInfo = BlobInfo.newBuilder(uploadId).build();

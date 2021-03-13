@@ -15,16 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/list-images")
 public class ListImagesServlet extends HttpServlet {
 
+    //Default serial number
+    private static final long serialVersionUID = 1L;
+
+    ////Retrieve projectId and bucketName
+    private static final String projectId = "rshillingford-sps-spring21";
+    private static final String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
+
     /**
      * Gets files saved in cloud storage and lists them on an HTML page.
      */
-    private static final long serialVersionUID = 1L;
-
     @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // List all of the uploaded files.
-    String projectId = "rshillingford-sps-spring21";
-    String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
     Page<Blob> uploads = bucket.list();
