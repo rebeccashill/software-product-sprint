@@ -51,22 +51,44 @@ async function showSongLyrics() {
 
 /** Script for time */
 function GetClock(){
-    var d=new Date();
-    var nhour=d.getHours(),nmin=d.getMinutes(),ap;
-    if(nhour==0){ap=" AM";nhour=12;}
-    else if(nhour<12){ap=" AM";}
-    else if(nhour==12){ap=" PM";}
-    else if(nhour>12){ap=" PM";nhour-=12;}
-    
-    if(nmin<=9) nmin="0"+nmin;
-    
-    document.getElementById('clockbox').innerHTML=""+nhour+":"+nmin+ap+"";
+    var date = new Date(); //creating object of date class
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    hour = updateTime(hour); //updating time
+    min = updateTime(min);
+    sec = updateTime(sec);
+    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
+    var t = setTimeout(function(){
+        currentTime()
+    }, 1000); /* setting timer */
 }
  
-window.onload=function(){
-    GetClock();
-    setInterval(GetClock,1000);
+function GetClock() {
+    var date = new Date(); //creating object of Date class
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    var midday = "AM";
+    midday = (hour >= 12) ? "PM" : "AM"; //assigning AM/PM
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour); //assigning hour in 12-hour format
+    hour = updateTime(hour);
+    min = updateTime(min);
+    sec = updateTime(sec);
+    document.getElementById("clockbox").innerText = hour + " : " + min + " : " + sec + " " + midday; //adding time to the DOM
+    var t = setTimeout(currentTime, 1000); /* setting timer */
 }
+
+function updateTime(k) { //appending 0 before time elements if less than 10
+    if (k < 10) {
+        return "0" + k;
+    }
+    else {
+        return k;
+    }
+}
+
+currentTime();
 
 /** Script for moving java */
 $(document).ready(function(){
