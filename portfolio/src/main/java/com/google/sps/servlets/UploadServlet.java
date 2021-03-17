@@ -43,7 +43,7 @@ public class UploadServlet extends HttpServlet {
 
     //Retrieve projectId and bucketName
     private static final String projectId = "rshillingford-sps-spring21";
-    private static final String bucketName = "rshillingford-sps-spring21.uc.r.appspot.com";
+    private static final String bucketName = "rshillingford-sps-spring21.appspot.com";
 
   @Override
     /* Upload posts to cloud storage.

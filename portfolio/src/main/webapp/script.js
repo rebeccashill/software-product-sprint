@@ -50,33 +50,17 @@ async function showSongLyrics() {
 })(jQuery);
 
 /** Script for time */
-function GetClock(){
-    var date = new Date(); //creating object of date class
+function getClock() {
+    var date = new Date();
     var hour = date.getHours();
     var min = date.getMinutes();
-    var sec = date.getSeconds();
-    hour = updateTime(hour); //updating time
-    min = updateTime(min);
-    sec = updateTime(sec);
-    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
-    var t = setTimeout(function(){
-        currentTime()
-    }, 1000); /* setting timer */
-}
- 
-function GetClock() {
-    var date = new Date(); //creating object of Date class
-    var hour = date.getHours();
-    var min = date.getMinutes();
-    var sec = date.getSeconds();
     var midday = "AM";
-    midday = (hour >= 12) ? "PM" : "AM"; //assigning AM/PM
-    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour); //assigning hour in 12-hour format
+    midday = (hour >= 12) ? "PM" : "AM";
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
     hour = updateTime(hour);
     min = updateTime(min);
-    sec = updateTime(sec);
-    document.getElementById("clockbox").innerText = hour + " : " + min + " : " + sec + " " + midday; //adding time to the DOM
-    var t = setTimeout(currentTime, 1000); /* setting timer */
+    const clockBock = document.getElementById('clockbox');
+    clockBock.innerHTML = hour + ":" + min + " " + midday;
 }
 
 function updateTime(k) { //appending 0 before time elements if less than 10
@@ -87,8 +71,47 @@ function updateTime(k) { //appending 0 before time elements if less than 10
         return k;
     }
 }
+window.onload=function(){
+    this.batteryIcon();
+    this.volumeIcon();
+    getClock();
+    setInterval(getClock,1000);
+}
 
-currentTime();
+
+
+/*
+Random Image Script- By JavaScript Kit (http://www.javascriptkit.com)
+Over 400+ free JavaScripts here!
+Keep this notice intact please
+*/
+function volumeIcon(){
+    var tbvol=new Array();
+                            
+    tbvol[1]="up";
+    tbvol[2]="down";
+    tbvol[3]="off";
+                            
+    var level=Math.floor(Math.random()*tbvol.length+1); //generate random volume level
+    document.getElementsByClassName('tbvolume')[0].innerHTML = '<i class="fa fa-volume-'+tbvol[level]+level+' "></i>';
+}
+function batteryIcon(){
+    var battno=new Array();
+                            
+    battno[1]="quarter";
+    battno[2]="half";
+    battno[3]="three-quarters";
+    battno[4]="full";
+                            
+    var level=Math.floor(Math.random()*battno.length+1);
+    document.getElementsByClassName('tbbattery')[0].innerHTML = '<i class="fa fa-battery-'+battno[level]+level+' "></i>';
+}
+
+
+
+
+
+
 
 /** Script for moving java */
 $(document).ready(function(){
@@ -118,7 +141,7 @@ $(document).ready(function(){
     $("#opensticky").click(function(){$("#sticky3").fadeIn();}); /** opening sticky3 **/
     $("#closecontentpop").click(function(){$("#contentpop").fadeOut();}); /** closing content pop up **/
     $("#opencontentpop").click(function(){$("#contentpop").fadeIn();}); /** opening conten tpop up **/
-     
+    
     $("#openpost1").click(function(){$("#postpop1").fadeIn();});
     $("#closepost1").click(function(){$("#postpop1").fadeOut();});
     $("#openpost2").click(function(){$("#postpop2").fadeIn();});
@@ -149,7 +172,7 @@ $(document).ready(function(){
     $("#closepost14").click(function(){$("#postpop14").fadeOut();});
     $("#openpost15").click(function(){$("#postpop15").fadeIn();});
     $("#closepost15").click(function(){$("#postpop15").fadeOut();});
-     
+    
     $("#openpost1a").click(function(){$("#postpop1").fadeIn();});
     $("#openpost2a").click(function(){$("#postpop2").fadeIn();});
     $("#openpost3a").click(function(){$("#postpop3").fadeIn();});
@@ -165,12 +188,8 @@ $(document).ready(function(){
     $("#openpost13a").click(function(){$("#postpop13").fadeIn();});
     $("#openpost14a").click(function(){$("#postpop14").fadeIn();});
     $("#openpost15a").click(function(){$("#postpop15").fadeIn();});
-    });
-     
-    $(document).ready(function(){
-    $(".taskbariconi").click(function(){$(".systempopup").fadeToggle();});
-    $(".taskbariconi").click(function(){$(".taskbariconi").toggleClass("tbibg2");});
-    });
+});
+ 
 
 /** Start drag script */
 $(function() {
