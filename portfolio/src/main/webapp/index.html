@@ -597,7 +597,6 @@
                 <div class="dragaskbox"><div class="menubtnaskbox"><span class="mbt">_</span><span class="mbt">□</span><a id="closeaskboxpop">X</a></div>
                 <div class="blogtaskbox">> send a message</div></div><!--dragaskbox-->
                 <iframe frameborder="0" scrolling="no" width="100%" height="200" src="" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
-                <!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
                 </div><!--askboxpop-->
                 
                 <div id="sbimg1">
@@ -678,7 +677,7 @@
                   <div class="scn">
                   <div class="shortcuticon">
                     <a id="opensbimg4">
-                      <img class="smolsbimg" src="https://static.wikia.nocookie.net/logopedia/images/d/da/Unused_music_icon.png/revision/latest?cb=20200527234951">
+                      <img class="smolsbimg" src="/images/apple_music_logo.png" alt="apple-music-logo">
                     </a>
                   </div>
                   <div class="shortcutname">
@@ -769,7 +768,7 @@
                     <div class="scn">
                     <div class="shortcuticon">
                       <a id="opensbimg5" href="https://rose-start.herokuapp.com">
-                        <img class="smolsbimg" src="https://files.softicons.com/download/holidays-icons/valentines-day-icons-by-succo-design/png/512x512/rose.png">
+                        <img class="smolsbimg" src="/images/rose.png" alt="red-rose">
                       </a>
                     </div>
                     <a href="https://rose-start.herokuapp.com">
@@ -892,54 +891,8 @@
                     
                     <span class="bimh"><div class="bimptri">▼</div><div class="bimp"><div class="muse">mcr</div></div>
                     
-                    <div class="tbvolume">
-                        <script language="JavaScript">
-                            /*
-                            Random Image Script- By JavaScript Kit (http://www.javascriptkit.com)
-                            Over 400+ free JavaScripts here!
-                            Keep this notice intact please
-                            */
-                            function random_imglink(){
-                                var tbvol=new Array()
-                            
-                                tbvol[1]="up"
-                                tbvol[2]="down"
-                                tbvol[3]="off"
-                            
-                                var ry=Math.floor(Math.random()*tbvol.length)
-                                if (ry==0)
-                                    ry=1
-                                document.write('<i class="fa fa-volume-'+tbvol[ry]+' "></i>')
-                            }
-                        random_imglink()
-                            //-->
-                        </script>
-                    </div><!--tbvolume--></span>
-                    <div class="tbbattery">
-                        <script language="JavaScript">
-                            /*
-                            Random Image Script- By JavaScript Kit (http://www.javascriptkit.com)
-                            Over 400+ free JavaScripts here!
-                            Keep this notice intact please
-                            */
-                            
-                            function random_imglink(){
-                                var battno=new Array()
-                            
-                                battno[1]="quarter"
-                                battno[2]="half"
-                                battno[3]="three-quarters"
-                                battno[4]="full"
-                            
-                                var ry=Math.floor(Math.random()*battno.length)
-                                if (ry==0)
-                                    ry=1
-                                document.write('<i class="fa fa-battery-'+battno[ry]+' "></i>')
-                            }
-                            random_imglink()
-                            //-->
-                        </script>
-                    </div><!--tbbattery-->
+                    <div class="tbvolume"></div><!--tbvolume--></span>
+                    <div class="tbbattery"></div><!--tbbattery-->
                     <div id="clockbox"></div>
                     </div><!--taskbarright-->
                      
