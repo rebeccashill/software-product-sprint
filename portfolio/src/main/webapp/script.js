@@ -57,7 +57,6 @@ function getClock() {
     var midday = "AM";
     midday = (hour >= 12) ? "PM" : "AM";
     hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
-    hour = updateTime(hour);
     min = updateTime(min);
     const clockBock = document.getElementById('clockbox');
     clockBock.innerHTML = hour + ":" + min + " " + midday;
@@ -86,25 +85,18 @@ Over 400+ free JavaScripts here!
 Keep this notice intact please
 */
 function volumeIcon(){
-    var tbvol=new Array();
+    
+    var tbvol = ["up","down","off"];
                             
-    tbvol[1]="up";
-    tbvol[2]="down";
-    tbvol[3]="off";
-                            
-    var level=Math.floor(Math.random()*tbvol.length+1); //generate random volume level
-    document.getElementsByClassName('tbvolume')[0].innerHTML = '<i class="fa fa-volume-'+tbvol[level]+level+' "></i>';
+    var level=Math.floor(Math.random()*tbvol.length); //generate random volume level
+    document.getElementsByClassName('tbvolume')[0].innerHTML = '<i class="fa fa-volume-'+tbvol[level]+'"></i>';
 }
 function batteryIcon(){
-    var battno=new Array();
                             
-    battno[1]="quarter";
-    battno[2]="half";
-    battno[3]="three-quarters";
-    battno[4]="full";
+    var battno = ["quarter","half","three-quarters","full"]
                             
-    var level=Math.floor(Math.random()*battno.length+1);
-    document.getElementsByClassName('tbbattery')[0].innerHTML = '<i class="fa fa-battery-'+battno[level]+level+' "></i>';
+    var level=Math.floor(Math.random()*battno.length);
+    document.getElementsByClassName('tbbattery')[0].innerHTML = '<i class="fa fa-battery-'+battno[level]+'"></i>';
 }
 
 
