@@ -93,7 +93,7 @@ function volumeIcon(){
 }
 function batteryIcon(){
                             
-    var battno = ["quarter","half","three-quarters","full"]
+    var battno = ["quarter","half","three-quarters","full"];
                             
     var level=Math.floor(Math.random()*battno.length);
     document.getElementsByClassName('tbbattery')[0].innerHTML = '<i class="fa fa-battery-'+battno[level]+'"></i>';
