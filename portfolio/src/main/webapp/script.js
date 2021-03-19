@@ -50,23 +50,60 @@ async function showSongLyrics() {
 })(jQuery);
 
 /** Script for time */
-function GetClock(){
-    var d=new Date();
-    var nhour=d.getHours(),nmin=d.getMinutes(),ap;
-    if(nhour==0){ap=" AM";nhour=12;}
-    else if(nhour<12){ap=" AM";}
-    else if(nhour==12){ap=" PM";}
-    else if(nhour>12){ap=" PM";nhour-=12;}
-    
-    if(nmin<=9) nmin="0"+nmin;
-    
-    document.getElementById('clockbox').innerHTML=""+nhour+":"+nmin+ap+"";
+function getClock() {
+    var date = new Date();
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var midday = "AM";
+    midday = (hour >= 12) ? "PM" : "AM";
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
+    min = updateTime(min);
+    const clockBock = document.getElementById('clockbox');
+    clockBock.innerHTML = hour + ":" + min + " " + midday;
 }
- 
+
+function updateTime(k) { //appending 0 before time elements if less than 10
+    if (k < 10) {
+        return "0" + k;
+    }
+    else {
+        return k;
+    }
+}
 window.onload=function(){
-    GetClock();
-    setInterval(GetClock,1000);
+    this.batteryIcon();
+    this.volumeIcon();
+    getClock();
+    setInterval(getClock,1000);
 }
+
+
+
+/*
+Random Image Script- By JavaScript Kit (http://www.javascriptkit.com)
+Over 400+ free JavaScripts here!
+Keep this notice intact please
+*/
+function volumeIcon(){
+    
+    var tbvol = ["up","down","off"];
+                            
+    var level=Math.floor(Math.random()*tbvol.length); //generate random volume level
+    document.getElementsByClassName('tbvolume')[0].innerHTML = '<i class="fa fa-volume-'+tbvol[level]+'"></i>';
+}
+function batteryIcon(){
+                            
+    var battno = ["quarter","half","three-quarters","full"];
+                            
+    var level=Math.floor(Math.random()*battno.length);
+    document.getElementsByClassName('tbbattery')[0].innerHTML = '<i class="fa fa-battery-'+battno[level]+'"></i>';
+}
+
+
+
+
+
+
 
 /** Script for moving java */
 $(document).ready(function(){
@@ -96,7 +133,7 @@ $(document).ready(function(){
     $("#opensticky").click(function(){$("#sticky3").fadeIn();}); /** opening sticky3 **/
     $("#closecontentpop").click(function(){$("#contentpop").fadeOut();}); /** closing content pop up **/
     $("#opencontentpop").click(function(){$("#contentpop").fadeIn();}); /** opening conten tpop up **/
-     
+    
     $("#openpost1").click(function(){$("#postpop1").fadeIn();});
     $("#closepost1").click(function(){$("#postpop1").fadeOut();});
     $("#openpost2").click(function(){$("#postpop2").fadeIn();});
@@ -127,7 +164,7 @@ $(document).ready(function(){
     $("#closepost14").click(function(){$("#postpop14").fadeOut();});
     $("#openpost15").click(function(){$("#postpop15").fadeIn();});
     $("#closepost15").click(function(){$("#postpop15").fadeOut();});
-     
+    
     $("#openpost1a").click(function(){$("#postpop1").fadeIn();});
     $("#openpost2a").click(function(){$("#postpop2").fadeIn();});
     $("#openpost3a").click(function(){$("#postpop3").fadeIn();});
@@ -143,12 +180,8 @@ $(document).ready(function(){
     $("#openpost13a").click(function(){$("#postpop13").fadeIn();});
     $("#openpost14a").click(function(){$("#postpop14").fadeIn();});
     $("#openpost15a").click(function(){$("#postpop15").fadeIn();});
-    });
-     
-    $(document).ready(function(){
-    $(".taskbariconi").click(function(){$(".systempopup").fadeToggle();});
-    $(".taskbariconi").click(function(){$(".taskbariconi").toggleClass("tbibg2");});
-    });
+});
+ 
 
 /** Start drag script */
 $(function() {
