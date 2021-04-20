@@ -13,18 +13,19 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random language to the page.
  */
-function addRandomGreeting() {
-    const greetings =
-        ['Im from NYC', 'I love chipotle', 'Im a cat person', 'I love 2048'];
+import {  } from "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js";
+function addLanguage() {
+    const languages =
+        ['java', 'python', 'asm', 'c'];
 
     // Pick a random greeting.
-    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+    const language = languages[Math.floor(Math.random() * languages.length)];
 
     // Add it to the page.
-    const greetingContainer = document.getElementById('greeting-container');
-    greetingContainer.innerText = greeting;
+    const languageContainer = document.getElementById('language-container');
+    languageContainer.innerText = language;
 }
 
 /** Fetches the song lyrics from LyricsServlet and updates the page. */

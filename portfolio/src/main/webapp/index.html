@@ -9,11 +9,12 @@
         <meta name="color:scrollbar" content="#9D86A3">
     
         <title>Rebecca Shillingford</title>
-        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>        
+        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
         <script src="jquery-ui.js" type="text/javascript"></script>
         <script src="jquery-ui.min.js" type="text/javascript"></script>
         <script src="script.js" type="text/javascript"></script>
-        <script src="jquery.style-my-tooltips.js" type="text/javascript"></script>
+        <!--<script src="jquery.style-my-tooltips.js" type="text/javascript"></script>-->
         <script src="https://static.tumblr.com/qsifglb/mZjl87ts1/f8.js" type="text/javascript"></script>
 
         <!-- CSS Stuff-->
@@ -28,7 +29,31 @@
         <style type="text/css">
         /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/nature/nat-8/nat791.cur), auto !important;} /* End https://www.cursors-4u.com */
         </style>
-    </head>
+
+        <!-- drag script -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+ 
+    $(function() {
+        $( "#sbimg1" ).draggable({ handle: "div.dragimg1" });
+        $( "#sbimg2" ).draggable({ handle: "div.dragimg2" });
+        $( "#sbimg3" ).draggable({ handle: "div.dragimg3" });
+        $( "#sbimg4" ).draggable({ handle: "div.dragimg4" });
+        $( "#sbimg5" ).draggable({ handle: "div.dragimg5" });
+        $( "#archivepop" ).draggable({ handle: "div.dragarchive" });
+        $( "#contentpop" ).draggable({ handle: "div.dragcontent" });
+        $( "#aboutpop" ).draggable({ handle: "div.dragabout" });
+        $( "#askboxpop" ).draggable({ handle: "div.dragaskbox" });
+        $( "#blogrollpop" ).draggable({ handle: "div.dragblogroll" });
+        $( ".shortcut" ).draggable({ grid: [ 100, 98 ] });
+        $( "#sticky1" ).draggable({ handle: "div.dragsticky1" });
+        $( "#sticky2" ).draggable({ handle: "div.dragsticky2" });
+        $( "#sticky3" ).draggable({ handle: "div.dragsticky3" });
+    });
+</script>
+</head>
     
     
     
@@ -127,27 +152,82 @@
             <div id="notescon">4 notes</div>
         </div>
 
+        <!--post 2-->
+        <div class="post">
+            <div class="postc">
+                <div class="pquote">AI@UNC</div>
+                <br>
+                <div class="text">my friends & i started the ai club at unc!</div>
+                
+                <div class="text">
+                    check out our linktree <a href="https://linktr.ee/uncaiclub">here.</a>
+                </div>
+                  
+                <div class="audem"></div>
+                <div class="aline">and our slack <a href="https://uncartificial-gry5363.slack.com/">here...</a></div>
+                
+                <!--Dog 1-->
+                <img class="askerportrait" src="https://www.transparentpng.com/thumb/dog/transparent-dog-image-icon-17.png">
+                <div class="asktri">◀</div>
+                <div class="a">
+                    <span class="askerm">
+                        <span class="fa fa-quote-left"></span>
+                        Dog says -</span>
+                    <span class="q">"and our insta <a href="https://instagram.com/uncaiclub/">here!</a>"</span>
+                </div>
+
+                <a href="https://google.com">
+                    <div class="ptitle">
+                        <i class="fa fa-link"></i>
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </a>
+                <div class="text"></div>
+                <div class="text">
+                    <div class="{Alt}">
+                        <div class="line">
+                            <span class="name">
+                            </span> ~~~~~~~~~~<br/>
+                        </div>
+                    </div>
+                </div>
+                  
+            </div><!--postc-->
+            
+            <!--post 2 notes-->
+            <div class="postdesu">
+                <a title="file size: {NoteCount} B" id="openpost2a">
+                <i class="fa fa-font"></i> gossipgirl.txt
+                <i class="fa fa-image"></i> beyonce.jpg
+                <i class="fa fa-th-large"></i> photoset
+                <i class="fa fa-fast-forward"></i> vid_.mp4
+                <i class="fa fa-link"></i>
+                <i class="fa fa-music"></i> TrackName.mp3
+                <i class="fa fa-comment-o"></i> chat_log_ 03/21
+                <i class="fa fa-quote-left"></i> quote.txtquote
+                <i class="fa fa-envelope-o"></i> mail received on 03/06/2021
+                </a>
+            </div>
+            <div id="notescon">3 notes</div>
+        </div>
 
 
         <!--post 2-->
         <div class="post">
             <div class="postc">
-                <div class="pquote">Random facts about me</div>
-                <div class="qsrc">
-                    <i class="fa fa-quote-left"></i> Hi
-                    <i class="fa fa-quote-right"></i>
-                </div>
+                <div class="pquote">generate random coding languages that i know :) lol</div>
+                <br>
                 <div class="ptitle"></div>
                 
                 <!--Random greeting script-->
-                <button onclick="addRandomGreeting()">
+                <button onclick="addLanguage()">
                     <div class="text">
                         <div class="generatorbutton">Click here!</div>
                     </div>
                 </button>
                   
                 <div class="audem"></div>
-                <div class="aline" id="greeting-container">Blank space</div>
+                <div class="aline" id="language-container">Blank space</div>
                 
                 <!--Dog 1-->
                 <img class="askerportrait" src="https://www.transparentpng.com/thumb/dog/transparent-dog-image-icon-17.png">
@@ -166,7 +246,6 @@
                     </div>
                 </a>
                 <div class="text"></div>
-                <div class="ptitle"></div>
                 <div class="text">
                     <div class="{Alt}">
                         <div class="line">
@@ -530,7 +609,7 @@
                     </div>
                     <div class="stickyt1">> sticky note 1</div>
                   </div>
-                  this is sticky note 1
+                  currently participating in google's software product sprint
                 </div><!-- end sticky note 1 -->
                 
                 <div id="sticky2" class="ui-draggable">
@@ -540,7 +619,7 @@
                     </div>
                     <div class="stickyt2">> sticky note 2</div>
                   </div>
-                  this is sticky note 2
+                  feel free 2 click around!
                 </div><!-- end sticky note 2 -->
                 
                 <div id="blogrollpop">
@@ -774,21 +853,6 @@
                     <a href="https://rose-start.herokuapp.com">
                       <div class="shortcutname">
                         <span class="scnbg">RoseStart</span>
-                      </div>
-                    </a>
-                    </div>
-                    </div><!--shortcut-->
-                    
-                    <div class="shortcut">
-                    <div class="scn">
-                    <div class="shortcuticon">
-                      <a id="opensbimg6" href="https://2048game.com">
-                        <img class="smolsbimg" src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/gnome-2048-icon.png">
-                      </a>
-                    </div>
-                    <a href="https://2048game.com">
-                      <div class="shortcutname">
-                        <span class="scnbg">Mock 2048</span>
                       </div>
                     </a>
                     </div>
@@ -1283,5 +1347,12 @@
                 </center>
             </div><!--postpop15-->
         </main>
+        <!--scripts down here-->
+        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>        
+        <script src="jquery-ui.js" type="text/javascript"></script>
+        <script src="jquery-ui.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <script src="jquery.style-my-tooltips.js" type="text/javascript"></script>
+        <script src="https://static.tumblr.com/qsifglb/mZjl87ts1/f8.js" type="text/javascript"></script>
     </body>
 </html>
