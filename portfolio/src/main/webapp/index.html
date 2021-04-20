@@ -9,11 +9,12 @@
         <meta name="color:scrollbar" content="#9D86A3">
     
         <title>Rebecca Shillingford</title>
-        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>        
+        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
         <script src="jquery-ui.js" type="text/javascript"></script>
         <script src="jquery-ui.min.js" type="text/javascript"></script>
         <script src="script.js" type="text/javascript"></script>
-        <script src="jquery.style-my-tooltips.js" type="text/javascript"></script>
+        <!--<script src="jquery.style-my-tooltips.js" type="text/javascript"></script>-->
         <script src="https://static.tumblr.com/qsifglb/mZjl87ts1/f8.js" type="text/javascript"></script>
 
         <!-- CSS Stuff-->
@@ -28,7 +29,31 @@
         <style type="text/css">
         /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/nature/nat-8/nat791.cur), auto !important;} /* End https://www.cursors-4u.com */
         </style>
-    </head>
+
+        <!-- drag script -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+ 
+    $(function() {
+        $( "#sbimg1" ).draggable({ handle: "div.dragimg1" });
+        $( "#sbimg2" ).draggable({ handle: "div.dragimg2" });
+        $( "#sbimg3" ).draggable({ handle: "div.dragimg3" });
+        $( "#sbimg4" ).draggable({ handle: "div.dragimg4" });
+        $( "#sbimg5" ).draggable({ handle: "div.dragimg5" });
+        $( "#archivepop" ).draggable({ handle: "div.dragarchive" });
+        $( "#contentpop" ).draggable({ handle: "div.dragcontent" });
+        $( "#aboutpop" ).draggable({ handle: "div.dragabout" });
+        $( "#askboxpop" ).draggable({ handle: "div.dragaskbox" });
+        $( "#blogrollpop" ).draggable({ handle: "div.dragblogroll" });
+        $( ".shortcut" ).draggable({ grid: [ 100, 98 ] });
+        $( "#sticky1" ).draggable({ handle: "div.dragsticky1" });
+        $( "#sticky2" ).draggable({ handle: "div.dragsticky2" });
+        $( "#sticky3" ).draggable({ handle: "div.dragsticky3" });
+    });
+</script>
+</head>
     
     
     
@@ -195,14 +220,14 @@
                 <div class="ptitle"></div>
                 
                 <!--Random greeting script-->
-                <button onclick="addRandomGreeting()">
+                <button onclick="addLanguage()">
                     <div class="text">
                         <div class="generatorbutton">Click here!</div>
                     </div>
                 </button>
                   
                 <div class="audem"></div>
-                <div class="aline" id="greeting-container">Blank space</div>
+                <div class="aline" id="language-container">Blank space</div>
                 
                 <!--Dog 1-->
                 <img class="askerportrait" src="https://www.transparentpng.com/thumb/dog/transparent-dog-image-icon-17.png">
@@ -1337,5 +1362,12 @@
                 </center>
             </div><!--postpop15-->
         </main>
+        <!--scripts down here-->
+        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>        
+        <script src="jquery-ui.js" type="text/javascript"></script>
+        <script src="jquery-ui.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <script src="jquery.style-my-tooltips.js" type="text/javascript"></script>
+        <script src="https://static.tumblr.com/qsifglb/mZjl87ts1/f8.js" type="text/javascript"></script>
     </body>
 </html>
