@@ -15,32 +15,19 @@
 /**
  * Adds a random language to the page.
  */
-import {  } from "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js";
-function addLanguage() {
-    const languages =
-        ['java', 'python', 'asm', 'c'];
-
-    // Pick a random greeting.
-    const language = languages[Math.floor(Math.random() * languages.length)];
-
-    // Add it to the page.
-    const languageContainer = document.getElementById('language-container');
-    languageContainer.innerText = language;
-}
 
 /** Fetches the song lyrics from LyricsServlet and updates the page. */
-async function showSongLyrics() {
+(async function showSongLyrics() {
     // Send a request to /lyrics.
     const responseFromServer = await fetch('/lyrics');
 
     //Parse the response as JSON.
     const lyricsArray = await responseFromServer.json();
     const oneLyric = lyricsArray[Math.floor(Math.random() * lyricsArray.length)];
-    const lyricsContainer = document.getElementById('lyrics-container');
-    lyricsContainer.innerText = oneLyric;
-}
+    $('#lyrics-container').innerText = oneLyric;
+})
 /** Script for tooltips */
-(function($){
+/*(function($){
     $(document).ready(function(){
         $("a[title]").style_my_tooltips({
         tip_follows_cursor:true,
@@ -48,20 +35,7 @@ async function showSongLyrics() {
        tip_fade_speed:0,
         attribute:"title"});
     });
-})(jQuery);
-
-/** Script for time */
-function getClock() {
-    var date = new Date();
-    var hour = date.getHours();
-    var min = date.getMinutes();
-    var midday = "AM";
-    midday = (hour >= 12) ? "PM" : "AM";
-    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
-    min = updateTime(min);
-    const clockBock = document.getElementById('clockbox');
-    clockBock.innerHTML = hour + ":" + min + " " + midday;
-}
+})(jQuery);*/
 
 function updateTime(k) { //appending 0 before time elements if less than 10
     if (k < 10) {
@@ -71,11 +45,25 @@ function updateTime(k) { //appending 0 before time elements if less than 10
         return k;
     }
 }
+
 window.onload=function(){
+    //Load battery icon, volume icon, clock
     this.batteryIcon();
     this.volumeIcon();
-    getClock();
+    this.getClock();
     setInterval(getClock,1000);
+
+    // Generate random language
+    document.getElementById('generate-languages').addEventListener('click', () => {    
+    const languages = ['java', 'python', 'javascript', 'asm', 'c', 'c++', 'swift', 'c#', 'typescript', 'objective c'];
+
+    // Pick a language at random
+    const language = languages[Math.floor(Math.random() * languages.length)];
+
+    // Add it to the page
+    languageContainer = document.getElementById('language-container');
+    languageContainer.innerHTML = language;
+});
 }
 
 
@@ -100,6 +88,18 @@ function batteryIcon(){
     document.getElementsByClassName('tbbattery')[0].innerHTML = '<i class="fa fa-battery-'+battno[level]+'"></i>';
 }
 
+/** Script for time */
+function getClock(){
+    var date = new Date();
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var midday = "AM";
+    midday = (hour >= 12) ? "PM" : "AM";
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
+    min = updateTime(min);
+    const clockBock = document.getElementById('clockbox');
+    clockBock.innerHTML = hour + ":" + min + " " + midday;
+}
 
 
 
